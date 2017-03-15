@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/city.min.js"></script>
+    <script src="js/citydate.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--这句很关键 移动端-->
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            font-family: "Microsoft YaHei", "Segoe UI", "Lucida Grande", Helvetica, Arial, sans-serif;
+            text-decoration:none;
+
+
+        }
+        body{
+            background:#e8e8e8;
+            /*background:url('img/bg.png') no-repeat 0px 0px;*/
+        }
+        .banner{
+            height:50px;
+            background:#f6846a;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+        }
+        .city{
+            margin:0 auto;
+            font-size:1.2em;
+            /*psoition:absolute;*/
+            /*margin-top:-20px;*/
+            color:#fff;
+            text-align:center;
+            padding:10px 0px 0px 0px;
+
+
+
+        }
+        .content-name p{
+            text-align:center;
+            font-size:1.2em;
+            color:#1e96f2;
+            margin:10px auto;
+
+        }
+        .content-table{
+            font-size:1.2em;
+        }
+        .content-table {
+            width:500px;
+            height:100px;
+        }
+        .content{
+            width:96%;
+            height:120px;
+            margin:0 auto;
+
+
+
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="banner"><!--顶部-->
+    <span >
+
+        <a style="position:absolute;font-size: 1.2em;color:#fff;margin-top:10px;margin-left:10px"
+           href="index2.html">&lt;返回</a>
+
+        <p class="city">城市切换</p>
+    </span>
+
+
+</div>
+<!--内容-->
+<div style="height:20px;">
+
+</div>
+
+<!--选择省份-->
+
+<div id="city">
+
+
+</div>
+
+
+
+
+
+
+
+<script>
+    var ii=localStorage.getItem('message');//内存下标
+    console.log(ii)
+
+    var cityList=city1;
+    var city=document.getElementById('city');
+
+
+    for(var i in cityList){
+        var cityListi=cityList[i];
+
+        var cityListic=cityListi[ii]['c'];
+
+
+
+
+          for(var j in cityListic) {
+              var button = document.createElement('button');
+              city.appendChild(button);
+
+              button.innerHTML = cityListic[j]['n'];
+              var  cityListicnn=cityListic[j]['n'];
+              button.style.width = '23.6666666%';
+              button.style.margin = '0.6%';
+              button.style.height = '28px';
+              button.style.fontSize = '18px';
+              button.style.color='#4c4a4a';
+              button.style.background='#2BD5D5';
+
+              button.style.borderRadius='8%';
+              //console.log(cityListicnn)
+              var cityarr=cityListicnn.split()
+              button.onclick = (function (b) {
+
+                  return function () {
+
+                          for(var i in city1){
+
+                              for(var j in city1[i][ii]){
+                              }
+
+                              var city=cityList[i][ii][j][b]['n'];
+                          }
+
+                      addCity(city)
+                      localStorage.setItem('message1',city);//储存城市名称下标
+                      window.location.href='index.html';
+
+
+                  }
+              })(j);
+
+          }
+        }
+
+
+        //经常访问城市
+
+</script>
+
+
+</body>
+</html>

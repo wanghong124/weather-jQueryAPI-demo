@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <script src="js/city.min.js" ></script>
+    <script src="js/citydate.js"></script>
+
+    <link  href="css/css.css" rel="stylesheet" >
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/讯飞语音API /iFlytek_voice_Html5_manual/示例/合成示例/tts/js/fingerprint.js"></script>
+    <script src="js/讯飞语音API /iFlytek_voice_Html5_manual/示例/合成示例/tts/js/tts.min.js"></script>
+    <script src="js/讯飞语音API /iFlytek_voice_Html5_manual/示例/合成示例/tts/js/tts_demo.js"></script>
+
+    <!--<script src="../../../../../home/wangkai/文档/cordova create/app/www/js/weather-data.js"></script>-->
+    <!--<script src="../jquery本地链接/jquery-3.1.1.min.js"></script>-->
+    <!--语音-->
+
+
+
+</head>
+<body>
+    <!--css动画-->
+    <ul class="nav">
+        <li class="nav-2">
+            <a  href="#" class="on hover" rel="0">
+
+                <em></em>
+                <i class="i-1"> </i>
+                <i class="i-2"></i>
+                <i class="i-3"> </i>
+                <i class="i-4"> </i>
+                <i class="i-5"> </i>
+                <i class="i-6"> </i>
+                <i class="i-7"></i>
+            </a>
+        </li>
+    </ul>
+
+
+
+    <!--css动画//-->
+    <div class="bgimg">
+        <img id="mybgimg" src="img/bg.png">
+    </div>
+    <div class="banner"><!--弹性box-->
+
+
+         <div class="b-left">
+          <span style="font-size:1.2em;color:#fffdef;position:absolute;margin-top:24px;" >
+              <span id="city">西安</span><span>天气</span>
+              <span><a id="a" style="font-size:0.8em;color:#fffdef;" href="index2.html">[切换]</a></span>
+             </span>
+              <!--photo-->
+              <div class="photo" >
+              <img id="photoimg"  width="100px" src="img/32.png"   alt="图片显示超时">
+              </div>
+         </div>
+        <div class="b-right">
+            <div class="b-content">
+                <p id="qing" style="font-size:1.8em">晴</p>
+                <p id="wendu" style="font-size:2.0em"><span id="wendu1">24</span>~<span id="wendu2">35</span>℃</p>
+                <p style="font-size:1.2em">当前气温:<span id="dangqian">34</span>℃</p>
+                <p style="font-size:1.2em"><span id="fengji">东风</span><span id="jishu">3</span>级</p>
+                <p id="pp" style="font-size: 15px"><img id="imgimg" src="img/28.png"><span id="img" style="background-size:20px 20px">
+
+                </span>空气质量指数:<span id="kongqizhishu">59</span>&nbsp;<span id="liang">良</span></p>
+
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+    <!--body-->
+    <p id="qiri" style="font-size:1.4em; display:block;">七日天气预报<span><img id="laba" src="img/laba.png"></span></p>
+    <div class="body">
+
+        <div class="body-content">
+        <ul id="ul">
+            <li><!--1-->
+                <span class="date1">07/04</span> <span class="date111">今日</span>
+
+                <div class="mycenter">
+                    <img   class="myimg" src="img/32.png" alt="图片显示超时">
+                    <span class="myweather">晴</span>
+                </div>
+
+                <div  class="date-r">
+                    <span class="date-w">24</span> ~<span class="datered"><span class="date-ww">35</span>℃</span>
+                </div>
+            </li>
+
+            <li><!--2-->
+                <span class="date1">07/05</span> <span class="date111">明日</span>
+
+                <div class="mycenter">
+                    <img class="myimg" src="img/28.png" alt="图片显示超时">
+                    <span class="myweather">多云</span>
+                </div>
+
+                <div  class="date-r">
+                    <span class="date-w">23</span> ~<span class="datered"><span class="date-ww">35</span>℃</span>
+                </div>
+            </li>
+
+            <li><!--3-->
+                <span class="date1">07/06</span> <span class="date111">周三</span>
+
+                <div class="mycenter">
+                    <img  class="myimg" src="img/28.png" alt="图片显示超时">
+                    <span class="myweather">多云转阴天</span>
+                </div>
+
+                <div  class="date-r">
+                    <span class="date-w">25</span> ~<span class="datered"><span class="date-ww">32</span>℃</span>
+                </div>
+            </li>
+
+            <li><!--4-->
+                <span class="date1">07/07</span> <span class="date111">周四</span>
+
+                <div class="mycenter">
+                    <img class="myimg" src="img/28.png" alt="图片显示超时">
+                    <span class="myweather">小雨转中雨</span>
+                </div>
+
+                <div  class="date-r">
+                    <span class="date-w">22</span> ~<span class="datered"><span class="date-ww">28</span>℃</span>
+                </div>
+            </li>
+
+            <li><!--5-->
+                <span class="date1">07/08</span> <span class="date111">周五</span>
+
+                <div class="mycenter">
+                    <img class="myimg" src="img/64.png" alt="图片显示超时">
+                    <span class="myweather">小雨转中雨</span>
+                </div>
+
+                <div  class="date-r">
+                    <span class="date-w">22</span> ~<span class="datered"><span class="date-ww">28</span>℃</span>
+                </div>
+            </li>
+
+            <li><!--6-->
+                <span class="date1">07/09</span> <span class="date111">周六</span>
+
+                <div class="mycenter">
+                    <img class="myimg" src="img/64.png" alt="图片显示超时">
+                    <span class="myweather">小雨转中雨</span>
+                </div>
+
+                <div  class="date-r">
+                    <span class="date-w">22</span> ~<span class="datered"><span class="date-ww">27</span>℃</span>
+                </div>
+            </li>
+
+            <li class="li7"><!--7-->
+                <span class="date1">07/10</span> <span class="date111">周日</span>
+
+                <div class="mycenter">
+                    <img class="myimg" src="img/64.png" alt="图片显示超时">
+                    <span class="myweather">小雨转中雨</span>
+                </div>
+
+                <div  class="date-r">
+                    <span class="date-w">22</span>~<span class="datered"><span class="date-ww">27</span>℃</span>
+                </div>
+            </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </ul>
+
+
+        </div>
+
+
+    </div>
+    <div class="travel"><!--旅行-->
+
+        <h2 class="h2" style=" padding:0px 15px;color:#f6846a;
+         text-shadow: 0px 0px 0 #fff,2px 0px 0 #333,2px -1px 0 #444;
+        ">温馨提示</h2>
+         <p class="travel-1">天气较好，同时又有微风伴您一路同行。虽会让人感觉有点凉，但仍适宜旅游，可不要错过机会呦！</p>
+        <p class="travel-2">
+            气象条件对空气污染物稀释、扩散和清除无明显影响，易感人群应适当减少室外活动时间。</p>
+        <p class="travel-3">
+            昼夜温差较大，较易发生感冒，请适当增减衣服。体质较弱的朋友请注意防护。</p>
+
+    </div>
+
+
+
+<script>
+            //var weather=weatherData['HeWeather'][0];
+
+            //七日天气预报
+//            for(var i=0;i<$('.date1').length;i++){
+//
+//                var date=(weather['daily_forecast'][i]['date']).substr(5);
+//               //$( $('.date1')[i]).html(date);
+                //$( $('.date-w')[i]).html(weather['daily_forecast'][i]['tmp']['min']);
+                //$( $('.date-ww')[i]).html(weather['daily_forecast'][i]['tmp']['max']);
+                //$( $('.myweather')[i]).html(weather['daily_forecast'][i]['cond']['txt_d']);
+                //var myweather=weather['daily_forecast'][i]['cond']['txt_d']
+
+//                var weathers=weather['daily_forecast'];
+//
+//                if(weathers[0]['cond']['txt_d']='晴'){
+//                   $('.myimg')[0].src='img/32.png';
+//
+//                }
+//                if(weathers[1]['cond']['txt_d']='多云'){
+//                    $('.myimg')[1].src='img/28.png';
+//                }
+//                  if(weathers[2]['cond']['txt_d']='多云'){
+//                    $('.myimg')[2].src='img/28.png';
+//                }
+////
+//                 if(weathers[3]['cond']['txt_d']='小雨'){
+//                    $('.myimg')[3].src='img/64.png';
+//                }
+//                  if(weathers[4]['cond']['txt_d']='小雨'){
+//                    $('.myimg')[4].src='img/64.png';
+//                }
+//                if(weathers[5]['cond']['txt_d']='阴'){
+//                    $('.myimg')[5].src='img/26.png';
+//                }
+//                if(weathers[6]['cond']['txt_d']='阴'){
+//                    $('.myimg')[6].src='img/28.png';
+//                }
+//
+//            }
+
+            //城市
+            //$('#city').html(weather['basic']['city']);
+//            $('#qing').html(weather['daily_forecast'][0]['cond']['txt_n']);
+//            $('#wendu1').html(weather['daily_forecast'][0]['tmp']['min']);
+//            $('#wendu2').html(weather['daily_forecast'][0]['tmp']['max']);
+//            //当前气温
+//            $('#dangqian').html(weather['now']['tmp']);
+//            //某风某级
+//            $('#fengji').html(weather['now']['wind']['dir']);
+//            $('#jishu').html(weather['now']['wind']['sc']);//级
+//            $('#liang').html(weather['aqi']['city']['qlty']);//良
+//            $('#kongqizhishu').html(weather['aqi']['city']['aqi']);//PM2.5
+            //console.log(weather['aqi']['city']['aqi'])//良
+
+
+
+
+
+            //替换城市
+
+            //cityname111==null? cityname111='西安': cityname111=city;
+
+
+            $(document).ready(function(){
+                $.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js',function(){
+                    console.log('ip定位'+remote_ip_info['city'])
+                });
+
+
+                var mycity=document.getElementById('city');
+
+                var city=localStorage.getItem('message1');//省名
+
+                //console.log(city);
+
+
+                var cityname1=(!city)?'西安':city;
+
+                mycity.innerHTML=city;
+                $('#city').html(cityname1);
+                console.log(cityname1)
+
+
+            });
+
+             console.log('23333'+cityArray.name)
+//            localStorage.setItem('aa',localStorage.getItem('message'));
+//            localStorage.setItem('bb',localStorage.getItem('message1'));
+
+
+
+
+
+            //当前星期
+            var arr= ["周日","周一","周二","周三","周四","周五","周六"];
+            var ii=new Date().getDay();//星期几 new Date().getDay()  4
+            //$('.date111').html(arr[ii]);//4
+//                $('.date112').html(arr[(ii+1)>6?(ii+1)-7:(ii+1)]);//5
+//                $('.date113').html(arr[(ii+2)>6?(ii+2)-7:(ii+2)]);//6
+//                $('.date114').html(arr[(ii+3)>6?(ii+3)-7:(ii+3)]);//7-7=0
+//                $('.date115').html(arr[(ii+4)>6?(ii+4)-7:(ii+4)]);//8-7=1
+//                $('.date116').html(arr[(ii+5)>6?(ii+5)-7:(ii+5)]);//9-7=2
+//                $('.date117').html(arr[(ii+6)>6?(ii+6)-7:(ii+6)]);//9-7=3
+                for(var j=0;j<7;j++){
+
+                    $($('.date111')[j]).html(arr[(ii+j)>6?(ii+j)-7:(ii+j)]);//5
+                    if(j==0){
+                        $($('.date111')[j]).html('今日')
+                    }
+                    if(j==1){
+                        $($('.date111')[j]).html('明日')
+                    }
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //apia接口
+
+//                var cityval={city:$('#city').html()};
+//
+//                console.log(cityval);
+//
+//                window.onload=function(){
+//                $.ajax({
+//                    url:"http://apis.baidu.com/heweather/weather/free",
+//                    type:'GET',
+//                    data:cityval,
+//                    headers:{
+//                        apikey:'48bff7b0c316156755715abd73e0ce3b'
+//                    },success:function(data){
+//                        //console.log(data);
+//                        var myweather1=data['HeWeather data service 3.0'][0];
+//                        var myweather2=data['HeWeather data service 3.0'][0]['daily_forecast'];
+//
+//                        for(var i=0;i<myweather2.length;i++){
+//                            //console.log(myweather2[i]['tmp']['min']);
+//                            $( $('.date1')[i]).html((myweather2[i]['date']).substr(5));//日期
+//                            $( $('.myweather')[i]).html(myweather2[i]['cond']['txt_d']);//天气
+//                            $( $('.date-w')[i]).html(myweather2[i]['tmp']['min']);//最低天气
+//                            $( $('.date-ww')[i]).html(myweather2[i]['tmp']['max']);//最高天气
+//
+//
+//
+//                        }
+//                        //上面now
+////                        console.log(myweather1['now']['cond']['txt']);
+////                          $('#qing').html(myweather1['now']['cond']['txt']);//晴天
+//                          $('#wendu1').html(myweather2[0]['tmp']['min']);//最低气温
+//
+//                          $('#wendu2').html(myweather2[0]['tmp']['max']);//最高气温
+//////                        //当前气温
+////                          $('#dangqian').html(myweather1['now']['tmp']);
+//////                        //某风某级
+////                          $('#fengji').html(myweather1['now']['wind']['dir']);
+////                          $('#jishu').html(myweather1['now']['wind']['sc']);//级
+////                          $('#liang').html(myweather1['aqi']['city']['qlty']);//良
+////                          $('#kongqizhishu').html(myweather1['aqi']['city']['aqi']);//knogqi
+//                        //大图片
+//                        var bigphotoimg=myweather1['now']['cond']['txt'];
+//
+//                        if(bigphotoimg=='晴'){
+//                            $('#photoimg').src='img/32.png';
+//                        }else if(bigphotoimg=='多云'){
+//                            $('#photoimg').src='img/28.png';
+//                        }else if(bigphotoimg=='小雨'){
+//                            $('#photoimg').src='img/64.png';
+//                        }else if(bigphotoimg=='阴'){
+//                            $('#photoimg').src='img/26.png';
+//                        }else if(bigphotoimg=='多云转小雨' || bigphotoimg=='小雨转多云'){
+//                            $('#photoimg').src='img/28.png';
+//                        }else if(bigphotoimg=='小雨转中雨' || bigphotoimg=='中雨转小雨' ){
+//                            $('#photoimg').src='img/64.png';
+//                        }else{
+//                            $('#photoimg').src='img/28.png';
+//                        }
+//
+//                    },error:function(){
+//                        alert('网络出错!')
+//                    }
+//
+//                })
+//
+//                };
+
+
+
+            //七日天气 k780api接口
+            //var cityval=$('#city').html();
+            //默认
+
+
+
+
+            $(document).ready(function(){
+                $.ajax({
+                    type          : 'get',
+                    async         : false,
+                    url           : 'http://api.k780.com:88/?app=weather.future&weaid='+$('#city').html()+'&appkey=22275&sign=d98f0479eb1e7da133e7459593e091db&format=json&jsoncallback=data',
+                    dataType      : 'jsonp',
+                    jsonp         : 'callback',
+                    jsonpCallback : 'data',
+                    success       : function(data){
+                        if((data['result']).length==6){
+                            $('.li7').hide()
+                        }else{
+                            $('.li7').show()
+                        }
+                        //console.log(data['result'])
+
+                        for(var i in (data['result'])){//接口长度
+                           // console.log(data['result'][i]);
+
+                            var datetime=data['result'][i]['days'];
+                            $($('.date1')[i]).html(datetime.substr(5));//日期
+                            $( $('.myweather')[i]).html(data['result'][i]['weather']);//天气
+
+
+                             $( $('.date-ww')[i]).html(data['result'][i]['temp_high']);//最高天气
+                                //小图片
+                            $( $('.myimg')[i]).prop('src',data['result'][i]['weather_icon']);
+                            $( $('.date-w')[i]).html(data['result'][i]['temp_low']);//最低天气
+
+
+                        }
+                        $('#wendu1').html(data['result'][0]['temp_low']);//最低气温top显示
+//
+                        $('#wendu2').html(data['result'][0]['temp_high']);//最高气温top显示
+                        $('#qing').html(data['result'][0]['weather']);//晴天
+                        //语音
+                        $('#laba').click(function(){
+                        var str='今天是'+data['result'][0]['days']+'星期'+new Date().getDay()+","+$('#city').html()+
+                                '天气'+','+data['result'][0]['weather']+','+
+                                data['result'][0]['temp_low']+'到'+data['result'][0]['temp_high']+'摄氏度';
+                           // $('#laba').css()
+                            play_xiaoyan(str);//语音函数
+
+                           // $('#laba').css('transform', 'rotate(0deg)');
+                        });
+
+
+
+
+                        var myHeWeather= (data['result'][0]['weather']).split('');
+                                console.log(myHeWeather);
+
+                                if(myHeWeather.indexOf('晴')>=0){
+                                      $('#imgimg').attr('src','img/32.png')
+                                        $('#photoimg').attr('src','img/32.png')
+                                }else if(myHeWeather.indexOf('阴')>=0){
+                                    $('#imgimg').attr('src','img/29.png')
+                                        $('#photoimg').attr('src','img/29.png')
+                                }else if(myHeWeather.indexOf('雪')>=0){
+                                    $('#imgimg').attr('src','img/37.png')
+                                    $('#photoimg').attr('src','img/37.png')
+                                }else if(myHeWeather.indexOf('雨')>=0){
+                                    $('#imgimg').attr('src','img/64.png')
+                                    $('#photoimg').attr('src','img/64.png')
+                                }else if(myHeWeather.indexOf('云')>=0){//
+                                    $('#imgimg').attr('src','img/28.png')
+                                    $('#photoimg').attr('src','img/28.png')
+                                }else if(myHeWeather.indexOf('霾')>=0){
+                                    $('#imgimg').attr('src','img/21.png')
+                                    $('#photoimg').attr('src','img/21.png')
+                                }else if(myHeWeather.indexOf('雷')>=0){
+                                    $('#imgimg').attr('src','img/20.png')
+                                    $('#photoimg').attr('src','img/20.png')
+                                }else{
+                                    $('#imgimg').attr('src','img/28.png')
+                                    $('#photoimg').attr('src','img/28.png')
+                                }
+
+
+
+
+                    },
+                    error:function(){
+                        alert('网络出错！');
+
+
+                    }
+                });
+            });
+
+
+
+
+
+
+
+
+                //now 上面蓝色的 和风天气接口
+            $.ajax({
+                url:"https://free-api.heweather.com/v5/weather",//api
+                type:"GET",//获取方式
+                data:{city:$('#city').html(), key:"42ea3e0e9d94440e9132059f16b2b27e"},
+                success:function (mydata) {
+                    //  console.log(mydata['HeWeather5'][0]);
+                            //var dateHeWeather5=mydata['HeWeather5'][0]['now']['cond']['txt'];
+                           //$('#qing').html(mydata['HeWeather5'][0]['now']['cond']['txt']);//晴天
+
+                        $('#dangqian').html(mydata['HeWeather5'][0]['now']['tmp']); //当前气温
+//
+                          $('#fengji').html(mydata['HeWeather5'][0]['now']['wind']['dir']);//某风
+                          $('#jishu').html(mydata['HeWeather5'][0]['now']['wind']['sc']);//级
+                            $('#kongqizhishu').html(mydata['HeWeather5'][0]['aqi']['city']['aqi']);//空气质量
+                            $('#liang').html(mydata['HeWeather5'][0]['aqi']['city'].qlty);//良
+                           // console.log(mydata['HeWeather5'][0]['aqi']['city'].qlty);
+                            //天气语言
+                                var aa=mydata['HeWeather5'][0]['suggestion']['air']['txt'];//提示
+                                var bb=mydata['HeWeather5'][0]['suggestion']['drsg']['txt'];//空气污染
+                                 var cc=mydata['HeWeather5'][0]['suggestion']['flu']['txt'];//易发
+                                 //console.log(mydata['HeWeather5'][0]['suggestion']);
+                                $('.travel-1').html(aa);
+                                $('.travel-2').html(bb);
+                                $('.travel-3').html(cc);
+                                    //上面的大图片判断
+
+        //                                var myHeWeather= (mydata['HeWeather5'][0]['now']['cond']['txt']).split('');
+        //                                console.log(myHeWeather)
+        //                                if(myHeWeather.indexOf('晴')>=0){
+        //                                        $('#photoimg').attr('src','img/32.png')
+        //                                }else if(myHeWeather.indexOf('阴')>=0){
+        //                                        $('#photoimg').attr('src','img/37.png')
+        //                                }else if(myHeWeather.indexOf('雪')>=0){
+        //                                    $('#photoimg').attr('src','img/37.png')
+        //                                }else if(myHeWeather.indexOf('雨')>=0){
+        //                                    $('#photoimg').attr('src','img/64.png')
+        //                                }else if(myHeWeather.indexOf('云')>=0){//
+        //                                    $('#photoimg').attr('src','img/28.png')
+        //                                }else if(myHeWeather.indexOf('霾')>=0){
+        //                                    $('#photoimg').attr('src','img/21.png')
+        //                                }else if(myHeWeather.indexOf('雷')>=0){
+        //                                    $('#photoimg').attr('src','img/20.png')
+        //                                }else{
+        //                                    $('#photoimg').attr('src','img/37.png')
+        //                                }                                             //语音
+
+
+
+
+
+
+                },error:function(){
+                   alert('网络出错！');
+                    //$('.body-content').html('<h2>'+没有网络的手机就像砖头+'<h2>')
+                    //$('.body-content').hide()
+
+
+                }
+
+            });
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

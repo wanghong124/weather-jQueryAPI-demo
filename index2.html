@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="js/city.min.js"></script>
+    <script src="js/citydate.js"></script>
+
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            font-family: "Microsoft YaHei", "Segoe UI", "Lucida Grande", Helvetica, Arial, sans-serif;
+            text-decoration:none;
+
+
+        }
+        body{
+            background:#e8e8e8;
+            /*background:url('img/bg.png') no-repeat 0px 0px;*/
+
+        }
+
+
+        .banner{
+            height:50px;
+            background:#f6846a;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+        }
+        .city{
+            margin:0 auto;
+
+            font-size:1.2em;
+            color:#fff;
+            text-align:center;
+            padding:10px 0px 0px 0px;
+
+
+        }
+        .content-name p{
+            text-align:center;
+            font-size:1.2em;
+            color:#1e96f2;
+            margin:10px auto;
+
+        }
+        .content-table{
+            font-size:1.2em;
+        }
+        .content-table {
+            width:500px;
+            height:100px;
+        }
+        .content{
+            width:96%;
+            height:120px;
+            margin:0 auto;
+
+
+
+        }
+
+        .cityf{
+            text-align:center;
+            font-size:1.2em;
+            color:#1e96f2;
+            margin:10px auto;
+        }
+        #city{
+            width:98%;
+            height:600px;
+            margin:0 auto;
+            /*background:#333;*/
+
+        }
+        button{
+            width: 23.6667%;
+            margin: 0.6%;
+            height: 28px;
+            font-size: 18px;
+            background:#2BD5D5;
+            border-radius: 8%;
+            color:#4c4a4a;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="banner"><!--顶部-->
+    <span >
+
+        <a style="position:absolute;font-size: 1.2em;color:#fff;margin-top:10px;margin-left:10px"
+           href="index.html">&lt;返回</a>
+
+        <p class="city">城市切换</p>
+    </span>
+
+
+    </div>
+    <!--内容-->
+    <div class="content">
+        <div class="content-name">
+        <p>最常访问的城市</p>
+
+        </div>
+
+        <div id="historyCityList"><!--最常访问城市-->
+
+
+        </div>
+
+    </div>
+
+    <!--选择省份-->
+    <p class="cityf">选择省份</p>
+    <div id="city">
+
+
+    </div>
+
+
+
+
+
+
+
+    <script>
+        var mycity=city1;
+        var cityList=mycity['citylist'];
+        var city=document.getElementById('city');
+
+        for(var i in cityList){
+                var input=document.createElement('input');
+                input.type='button';
+                input.style.width='23.6666666%';
+                input.style.margin='0.6%';
+                input.style.height='28px';
+               input.style.background='#2BD5D5';
+              input.style.color='#4c4a4a';
+
+            input.style.borderRadius='8%';
+                input.style.fontSize='18px';
+                city.appendChild(input);
+                input.value=cityList[i]['p'];
+
+
+
+
+                    var cityListi=cityList[i];
+
+
+                    input.onclick=(function(a){//匿名函数的用法 点击那个参数 现实本身 参数是数组下标
+                        return function(){
+                            localStorage.setItem('message',a);//长期保存a
+                            window.location.href='index3.html';
+                            //四个特殊地区天气
+
+                        }
+                    })(i);
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+        //最长访问的城市
+
+
+        var historyCityList=document.getElementById('historyCityList');
+        var historyCityListDiv = document.getElementById("historyCityList");
+        var historyCityList = getCityOrderByTimes(8);
+
+        for (var i = 0; i < historyCityList.length; i++) {
+            var button = document.createElement("button");
+            button.innerHTML = historyCityList[i].name;
+
+
+            button.onclick = (function (i) {
+                return function () {
+                     localStorage.setItem("message1", historyCityList[i].name);
+
+
+//                    console.log( historyCityList[i].name)
+                    //location.assign("index.html");
+                    window.location.href='index.html';
+                    addCity(historyCityList[i].name);
+
+
+                }
+            })(i);
+
+            historyCityListDiv.appendChild(button);
+        }
+    </script>
+
+
+</body>
+</html>
